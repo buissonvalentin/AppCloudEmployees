@@ -91,8 +91,9 @@ const request1 = async () => {
 };
 
 const request2 = async id => {
+  console.log(id);
   return await findAsync({
-    request: { emp_no: id },
+    request: { emp_no: Number(id) },
     collection: employeeCollection,
   });
 };
