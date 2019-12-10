@@ -1,0 +1,146 @@
+[
+  {
+    "emp_no": 111692,
+    "first_Name": "Tonny",
+    "last_name": "Butterworth",
+    "departement": "Customer Service"
+  },
+  {
+    "emp_no": 111784,
+    "first_Name": "Marjo",
+    "last_name": "Giarratana",
+    "departement": "Customer Service"
+  },
+  {
+    "emp_no": 111877,
+    "first_Name": "Xiaobin",
+    "last_name": "Spinelli",
+    "departement": "Customer Service"
+  },
+  {
+    "emp_no": 111939,
+    "first_Name": "Yuchang",
+    "last_name": "Weedman",
+    "departement": "Customer Service"
+  },
+  {
+    "emp_no": 110085,
+    "first_Name": "Ebru",
+    "last_name": "Alpin",
+    "departement": "Finance"
+  },
+  {
+    "emp_no": 110114,
+    "first_Name": "Isamu",
+    "last_name": "Legleitner",
+    "departement": "Finance"
+  },
+  {
+    "emp_no": 110183,
+    "first_Name": "Shirish",
+    "last_name": "Ossenbruggen",
+    "departement": "Human Resources"
+  },
+  {
+    "emp_no": 110228,
+    "first_Name": "Karsten",
+    "last_name": "Sigstam",
+    "departement": "Human Resources"
+  },
+  {
+    "emp_no": 110022,
+    "first_Name": "Margareta",
+    "last_name": "Markovitch",
+    "departement": "Marketing"
+  },
+  {
+    "emp_no": 110039,
+    "first_Name": "Vishwani",
+    "last_name": "Minakawa",
+    "departement": "Marketing"
+  },
+  {
+    "emp_no": 110511,
+    "first_Name": "DeForest",
+    "last_name": "Hagimont",
+    "departement": "Development"
+  },
+  {
+    "emp_no": 110567,
+    "first_Name": "Leon",
+    "last_name": "DasSarma",
+    "departement": "Development"
+  },
+  {
+    "emp_no": 110725,
+    "first_Name": "Peternela",
+    "last_name": "Onuegbe",
+    "departement": "Quality Management"
+  },
+  {
+    "emp_no": 110765,
+    "first_Name": "Rutger",
+    "last_name": "Hofmeyr",
+    "departement": "Quality Management"
+  },
+  {
+    "emp_no": 110800,
+    "first_Name": "Sanjoy",
+    "last_name": "Quadeer",
+    "departement": "Quality Management"
+  },
+  {
+    "emp_no": 110854,
+    "first_Name": "Dung",
+    "last_name": "Pesch",
+    "departement": "Quality Management"
+  },
+  {
+    "emp_no": 111400,
+    "first_Name": "Arie",
+    "last_name": "Staelin",
+    "departement": "Research"
+  },
+  {
+    "emp_no": 111534,
+    "first_Name": "Hilary",
+    "last_name": "Kambil",
+    "departement": "Research"
+  },
+  {
+    "emp_no": 110303,
+    "first_Name": "Krassimir",
+    "last_name": "Wegerle",
+    "departement": "Production"
+  },
+  {
+    "emp_no": 110344,
+    "first_Name": "Rosine",
+    "last_name": "Cools",
+    "departement": "Production"
+  },
+  {
+    "emp_no": 110386,
+    "first_Name": "Shem",
+    "last_name": "Kieras",
+    "departement": "Production"
+  },
+  {
+    "emp_no": 110420,
+    "first_Name": "Oscar",
+    "last_name": "Ghazalie",
+    "departement": "Production"
+  },
+  {
+    "emp_no": 111035,
+    "first_Name": "Przemyslawa",
+    "last_name": "Kaelbling",
+    "departement": "Sales"
+  },
+  {
+    "emp_no": 111133,
+    "first_Name": "Hauke",
+    "last_name": "Zhang",
+    "departement": "Sales"
+  }
+]

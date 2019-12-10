@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/@ag-grid-community/all-modules/dist/ag-grid-community.min.noStyle.js"></script>
+    <script src="http://localhost:8080/main.js"></script>
+    <script src="https://kit.fontawesome.com/fe1aaacba5.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+    <h1 style="text-align: center; color: #555; margin-top: 20px;">Vue Administrateur</h1>
+    <div style="margin-left: 10%; margin-top: 5%;  transform: translate(0%,0%); width: 80%;">
+        <div class="card-deck" style="margin-bottom:20px; height:300px">
+            <div class="card" style="text-align:center">
+                <button id="btn_request5" class="btn" style="position: absolute; top :0; right: 0;"><i
+                        class="fas fa-redo-alt"></i></button>
+                <div class="card-body">
+                    <h5 class="card-title">Nombre d'employées par département</h5>
+                    <div id="res_req_5"></div>
+                </div>
+            </div>
+            <div class="card" style="text-align:center">
+                <button id="btn_request6" style="position: absolute; top :0; right: 0;" class="btn"> <i
+                        class="fas fa-redo-alt"></i>
+                </button>
+                <div class="card-body">
+                    <h5 class="card-title">Salaire moyen par département</h5>
+                    <div id="res_req_6"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const baseUrl = "http://localhost:8080/request/";
+
+        const request = ({
+            endpoint,
+            param,
+            displayData
+        } = {}) => {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var res = JSON.parse(xhttp.responseText);
+                    if (displayData)
+                        displayData(res.res)
+                }
+            };
+            const url = `${baseUrl}${endpoint}${param ? "?param=" + id: ""}`
+            xhttp.open("GET", url, true);
+            xhttp.setRequestHeader("Access-Control-Allow-Headers", "*");
+            xhttp.send({
+                test: "hello"
+            });
+        };
+
+        const displayRes5 = data => {
+            if (data) {
+                let content = ""
+                for (const d of data) {
+                    content += `<tr><th scope="row">${d.count}</th><td>${d._id}</td></tr>`
+                }
+
+                table = `<table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">Nombre d'employées</th>
+                                <th scope="col">Nom du département</th>
+                               
+                                </tr>
+                            </thead>
+                                <tbody>
+                                    ${content}
+                                </tbody>
+                            </table>`
+
+                $("#res_req_5").html(table)
+            }
+        }
+
+
+        const displayRes6 = data => {
+            if (data) {
+                let content = ""
+                for (const d of data) {
+                    content += `<tr><th scope="row">${d.avg}</th><td>${d.Departement}</td></tr>`
+                }
+
+                table = `<table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">Salaire Moyen</th>
+                                <th scope="col">Nom du département</th>
+                               
+                                </tr>
+                            </thead>
+                                <tbody>
+                                    ${content}
+                                </tbody>
+                            </table>`
+
+                $("#res_req_6").html(table)
+            }
+        }
+
+        $("#btn_request5").on("click", () => {
+            request({
+                endpoint: 5,
+                displayData: displayRes5
+            });
+
+        });
+
+        $("#btn_request6").on("click", () => {
+            const res = request({
+                endpoint: 6,
+                param: $("#date_input").val(),
+                displayData: displayRes6
+            });
+        });
+    </script>
+
+</body>
+
+</html>

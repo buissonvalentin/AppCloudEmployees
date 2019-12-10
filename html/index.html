@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/@ag-grid-community/all-modules/dist/ag-grid-community.min.noStyle.js"></script>
+    <script src="https://kit.fontawesome.com/fe1aaacba5.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+    <h1 style="text-align: center; color: #555; margin-top: 20px;">
+        DASHBOARD
+    </h1>
+    <div class="card-deck"
+        style="margin-left: 20%; margin-top: 18%;  transform: translate(0%,-50%); width: 60%; height: 200px;">
+        <div class="card" style="text-align:center">
+            <button onclick="location.href='./user_vue.html'" style="height: 80%;" class="btn"><i
+                    style="color: #3e5973;" class="fas fa-user fa-5x"></i></button>
+            <div class="card-body">
+                <h5 class="card-title">Vue Utilisateur</h5>
+            </div>
+        </div>
+        <div class="card" style="text-align:center">
+            <button onclick="location.href='./administrator_vue.html'" style="height: 80%;" class="btn"><i
+                    style="color: #3e5973;" class="fas fa-user-shield fa-5x"></i></i></button>
+            <div class="card-body">
+                <h5 class="card-title">Vue Administrateur</h5>
+            </div>
+        </div>
+        <div class="card" style="text-align:center">
+            <button onclick="location.href='./analyst_vue.html'" style="height: 80%;" class="btn"><i
+                    style="color: #3e5973;" class="fas fa-chart-area fa-5x"></i></i></button>
+            <div class="card-body">
+                <h5 class="card-title">Vue Analyste</h5>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+[
+  { "Departement": "Customer Service", "avg": 51280.41484716157 },
+  { "Departement": "Finance", "avg": 63170.31751611013 },
+  { "Departement": "Human Resources", "avg": 48160.69812777456 },
+  { "Departement": "Marketing", "avg": 64652.584748700174 },
+  { "Departement": "Development", "avg": 52175.82587724587 },
+  { "Departement": "Quality Management", "avg": 49838.769739071504 },
+  { "Departement": "Research", "avg": 52367.52954545455 },
+  { "Departement": "Production", "avg": 52327.77000834647 },
+  { "Departement": "Sales", "avg": 73352.88481228669 }
+]

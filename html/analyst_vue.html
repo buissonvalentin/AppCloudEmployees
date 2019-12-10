@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/@ag-grid-community/all-modules/dist/ag-grid-community.min.noStyle.js"></script>
+    <script src="http://localhost:8080/main.js"></script>
+    <script src="https://kit.fontawesome.com/fe1aaacba5.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+    <h1 style="text-align: center; color: #555; margin-top: 20px;">Vue Analyste</h1>
+    <div style="margin-left: 10%; margin-top: 5%;  transform: translate(0%,0%); width: 80%;">
+        <div class="card-deck" style="margin-bottom:20px; height:300px">
+            <div class="card" style="text-align:center">
+                <button id="btn_request7" class="btn" style="position: absolute; top :0; right: 0;"><i
+                        class="fas fa-redo-alt"></i></button>
+                <div class="card-body">
+                    <h5 class="card-title">Salaire moyen des employées</h5>
+                    <div id="res_req_7"></div>
+                </div>
+            </div>
+            <div class="card" style="text-align:center">
+                <button id="btn_request8" style="position: absolute; top :0; right: 0;" class="btn"> <i
+                        class="fas fa-redo-alt"></i>
+                </button>
+                <div class="card-body">
+                    <h5 class="card-title">Salaire min et max pour un poste</h5>
+                    <input id="post_input" type="text" name="id" placeholder="Poste"><br>
+                    <div id="res_req_8"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const baseUrl = "http://localhost:8080/request/";
+
+        const request = ({
+            endpoint,
+            param,
+            displayData
+        } = {}) => {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var res = JSON.parse(xhttp.responseText);
+                    if (displayData)
+                        displayData(res.res)
+                }
+            };
+            const url = `${baseUrl}${endpoint}${param ? "?param=" + param: ""}`
+            xhttp.open("GET", url, true);
+            xhttp.setRequestHeader("Access-Control-Allow-Headers", "*");
+            xhttp.send({
+                test: "hello"
+            });
+        };
+
+        const displayRes7 = data => {
+            if (data) {
+                $("#res_req_7").text(Math.round(data[0].avg))
+            }
+        }
+
+        const displayRes8 = data => {
+            if (data) {
+                $("#res_req_8").html(`Min: ${Math.round(data[0].min)}  </br>  Max: ${Math.round(data[0].max)}`)
+            }
+        }
+
+        $("#btn_request7").on("click", () => {
+            request({
+                endpoint: 7,
+                displayData: displayRes7
+            });
+
+        });
+
+        $("#btn_request8").on("click", () => {
+            const res = request({
+                endpoint: 8,
+                param: $("#post_input").val(),
+                displayData: displayRes8
+            });
+        });
+    </script>
+
+</body>
+
+</html>
