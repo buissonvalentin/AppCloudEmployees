@@ -8,6 +8,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 let departmentCollection, employeeCollection;
 
+//             https://app-cloud-employee.herokuapp.com/
+
 const DATABASE_NAME = "test";
 MongoClient.connect(
   "mongodb://val:wordpass@devincimdb2013.westeurope.cloudapp.azure.com:30000/test",
@@ -25,7 +27,6 @@ MongoClient.connect(
 
       console.log("Mongo Connected");
     }
-    console.log("done");
   }
 );
 
@@ -60,7 +61,7 @@ app.get("/request/3", async (req, res) => {
   res.send({ res: await request3() });
 });
 
-app.get("/request/4", async (req, res) => {
+app.get("/request/4", (req, res) => {
   res.send({ res: JSON.parse(fs.readFileSync("req4_result.json")) });
 });
 
@@ -68,7 +69,7 @@ app.get("/request/5", async (req, res) => {
   res.send({ res: await request5() });
 });
 
-app.get("/request/6", async (req, res) => {
+app.get("/request/6", (req, res) => {
   res.send({ res: JSON.parse(fs.readFileSync("req6_result.json")) });
 });
 

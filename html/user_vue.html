@@ -66,7 +66,7 @@
     </div>
 
     <script>
-        const baseUrl = "http://localhost:8080/request/";
+        const baseUrl = "https://app-cloud-employee.herokuapp.com/request/";
 
         const request = ({
             endpoint,
@@ -84,9 +84,7 @@
             const url = `${baseUrl}${endpoint}${param ? "?param=" + param: ""}`
             xhttp.open("GET", url, true);
             xhttp.setRequestHeader("Access-Control-Allow-Headers", "*");
-            xhttp.send({
-                test: "hello"
-            });
+            xhttp.send();
         };
 
         const displayRes1 = data => {

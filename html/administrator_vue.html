@@ -64,9 +64,7 @@
             const url = `${baseUrl}${endpoint}${param ? "?param=" + id: ""}`
             xhttp.open("GET", url, true);
             xhttp.setRequestHeader("Access-Control-Allow-Headers", "*");
-            xhttp.send({
-                test: "hello"
-            });
+            xhttp.send();
         };
 
         const displayRes5 = data => {

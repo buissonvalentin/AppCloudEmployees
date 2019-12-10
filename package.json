@@ -1,0 +1,25 @@
+{
+  "name": "dashboard-employees",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buissonvalentin/AppCloudEmployees.git"
+  },
+  "author": "Valentin Buisson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buissonvalentin/AppCloudEmployees/issues"
+  },
+  "homepage": "https://github.com/buissonvalentin/AppCloudEmployees#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "mongodb": "^3.3.5"
+  }
+}
