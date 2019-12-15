@@ -12,8 +12,8 @@ MongoClient.connect(
   }
 );
 
-// db.createUser({
-//   user: "val",
-//   pwd: "wordpass",
-//   roles: [{ role: "readWrite", db: "test" }],
-// });
+db.createUser({
+  user: "val",
+  pwd: "wordpass",
+  roles: [{ role: "readWrite", db: "test" }],
+});
