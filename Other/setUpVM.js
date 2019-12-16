@@ -19,7 +19,7 @@ const vmData = [
 
 const paramsConn = {
   username: "administrateur",
-  password: "V8eOFR%_",
+  password: process.env("VM_PASSWORD"),
   port: 22
 };
 
